@@ -12,3 +12,6 @@ ignore = [
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 asyncio_mode = "auto"
+# server/ on the import path, so `import app` works under the plain `pytest` command (as CI runs it),
+# not only under `python -m pytest`, which adds the current folder by itself.
+pythonpath = ["."]
